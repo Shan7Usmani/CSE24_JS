@@ -56,95 +56,39 @@
 // ---------------- BASIC DOM ----------------
 
 // Change text
-function changeText() {
-    let x = document.getElementById("demo");
-    x.innerHTML = "Hello World!";
-    x.style.color = "red";
-}
+document.addEventListener("DOMContentLoaded", function () {
 
-// Class change
-function changeClass() {
-    let y = document.getElementsByClassName("demo2");
-    for (let i = 0; i < y.length; i++) {
-        y[i].innerHTML = "Changed!";
-        y[i].style.backgroundColor = "yellow";
-    }
-}
+    // ---------------- MOUSE EVENTS ----------------
+    let btn = document.getElementById("mouseBtn");
 
-// Tag change
-function changeTag() {
-    let z = document.getElementsByTagName("p");
-    z[5].innerHTML = "Changed Paragraph!";
-}
+    btn.addEventListener("click", () => console.log("Click"));
+    btn.addEventListener("dblclick", () => console.log("Double Click"));
+    btn.addEventListener("mouseover", () => console.log("Mouse Over"));
+    btn.addEventListener("mouseout", () => console.log("Mouse Out"));
+    btn.addEventListener("mousedown", () => console.log("Mouse Down"));
+    btn.addEventListener("mouseup", () => console.log("Mouse Up"));
 
-// ---------------- ATTRIBUTES ----------------
+    document.addEventListener("mousemove", () => console.log("Mouse Moving"));
 
-function getattribute() {
-    let value = document.getElementById("demo").getAttribute("id");
-    document.getElementById("output").innerHTML = "ID: " + value;
-}
+    // ---------------- KEYBOARD EVENTS ----------------
+    let input = document.getElementById("keyboardInput");
 
-function setattribute() {
-    document.getElementById("demo").setAttribute("class", "democlass");
-}
+    input.addEventListener("keydown", (e) => console.log("Key Down:", e.key));
+    input.addEventListener("keyup", (e) => console.log("Key Up:", e.key));
+    input.addEventListener("keypress", (e) => console.log("Key Press:", e.key));
 
-// ---------------- CREATE / REMOVE ----------------
+    // ---------------- FORM EVENTS ----------------
+    let form = document.getElementById("form");
+    let nameInput = document.getElementById("nameInput");
 
-function createElementFunc() {
-    let p = document.createElement("p");
-    p.innerHTML = "New Element Created";
-    document.body.appendChild(p);
-}
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        console.log("Form Submitted");
+    });
 
-function removeElementFunc() {
-    let el = document.getElementById("demo");
-    if (el) el.remove();
-}
+    nameInput.addEventListener("focus", () => console.log("Focus"));
+    nameInput.addEventListener("blur", () => console.log("Blur"));
+    nameInput.addEventListener("change", () => console.log("Change"));
+    nameInput.addEventListener("input", () => console.log("Typing:", nameInput.value));
 
-// ---------------- MOUSE EVENTS ----------------
-
-let btn = document.getElementById("mouseBtn");
-
-btn.addEventListener("click", () => console.log("Click"));
-btn.addEventListener("dblclick", () => console.log("Double Click"));
-btn.addEventListener("mouseover", () => console.log("Mouse Over"));
-btn.addEventListener("mouseout", () => console.log("Mouse Out"));
-btn.addEventListener("mousedown", () => console.log("Mouse Down"));
-btn.addEventListener("mouseup", () => console.log("Mouse Up"));
-
-document.addEventListener("mousemove", () => console.log("Mouse Moving"));
-
-// ---------------- KEYBOARD EVENTS ----------------
-
-let input = document.getElementById("keyboardInput");
-
-input.addEventListener("keydown", (e) => console.log("Key Down:", e.key));
-input.addEventListener("keyup", (e) => console.log("Key Up:", e.key));
-input.addEventListener("keypress", (e) => console.log("Key Press:", e.key));
-
-// ---------------- FORM EVENTS ----------------
-
-let form = document.getElementById("form");
-let nameInput = document.getElementById("nameInput");
-
-form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    console.log("Form Submitted");
-});
-
-nameInput.addEventListener("focus", () => console.log("Focus"));
-nameInput.addEventListener("blur", () => console.log("Blur"));
-nameInput.addEventListener("change", () => console.log("Change"));
-nameInput.addEventListener("input", () => console.log("Typing:", nameInput.value));
-
-// ---------------- WINDOW EVENTS ----------------
-
-window.addEventListener("load", () => console.log("Page Loaded"));
-window.addEventListener("resize", () => console.log("Resized"));
-window.addEventListener("scroll", () => console.log("Scrolled"));
-window.addEventListener("focus", () => console.log("Window Focus"));
-window.addEventListener("blur", () => console.log("Window Blur"));
-window.addEventListener("beforeunload", (e) => {
-    e.preventDefault();
-    e.returnValue = "";
 });
