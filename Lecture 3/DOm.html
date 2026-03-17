@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Demo</title>
+
+    <style>
+        .democlass {
+            color: blue;
+            font-weight: bold;
+        }
+
+        .box {
+            border: 1px solid black;
+            padding: 10px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>DOM Demo</h2>
+
+    <!-- ID -->
+    <div class="box">
+        <p id="demo">Original Text</p>
+        <button onclick="changeText()">Change Text</button>
+        <button onclick="getattribute()">Get Attribute</button>
+        <button onclick="setattribute()">Set Attribute</button>
+    </div>
+
+    <!-- Class -->
+    <div class="box">
+        <p class="demo2">Class Element 1</p>
+        <p class="demo2">Class Element 2</p>
+        <p class="demo2">Class Element 3</p>
+        <button onclick="changeClass()">Change Class Elements</button>
+    </div>
+
+    <!-- Tag -->
+    <div class="box">
+        <p>Paragraph 1</p>
+        <p>Paragraph 2</p>
+        <p>Paragraph 3</p>
+        <button onclick="changeTag()">Change Tag Element</button>
+    </div>
+
+    <!-- Create / Remove -->
+    <div class="box">
+        <button onclick="createElementFunc()">Create Element</button>
+        <button onclick="removeElementFunc()">Remove Element</button>
+    </div>
+
+    <!-- Mouse Events -->
+    <div class="box">
+        <button id="mouseBtn">Mouse Events Button</button>
+    </div>
+
+    <!-- Keyboard -->
+    <div class="box">
+        <input id="keyboardInput" placeholder="Type here...">
+    </div>
+
+    <!-- Form -->
+    <div class="box">
+        <form id="form">
+            <input id="nameInput" placeholder="Enter name">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <!-- Output -->
+    <p id="output"></p>
+
+    <script src="script2.js"></script>
+
+</body>
+</html>
