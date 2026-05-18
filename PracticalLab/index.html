@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result Calculator</title>
+    <style>
+       body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 100px;
+    background-color: #f4f4f4;
+}
+
+h2 {
+    color: #333;
+}
+
+input {
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#result {
+    width: 250px;
+    margin: 20px auto;
+    padding: 10px;
+    font-weight: bold;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+    </style>
+</head>
+<body>
+
+<h2>Student Marks Calculator</h2>
+
+<input type="number" id="subjects" placeholder="Number of subjects" >
+<button onclick="calculateResult()">Find </button>
+<script src="script.js"></script>
+
+<div id="result"></div>
+</body>
+</html>
